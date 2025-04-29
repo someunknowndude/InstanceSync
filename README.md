@@ -13,7 +13,7 @@ Universal client-to-client instance replication library using [BugSocket](https:
 #### Load the library
 
 ```lua
-  local sInstance = loadstring("https://raw.githubusercontent.com/someunknowndude/InstanceSync/refs/heads/main/InstanceSync.lua")()
+  local sInstance = loadstring(game:HttpGet("https://raw.githubusercontent.com/someunknowndude/InstanceSync/refs/heads/main/InstanceSync.lua"))()
 ```
 
 #### Create synced Instance
