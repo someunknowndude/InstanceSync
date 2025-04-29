@@ -4,7 +4,9 @@
 Universal client-to-client instance replication library using [BugSocket](https://github.com/4DBug/Socket)
 
 
+## Testing game
 
+#### An uncopylocked game containing the library and example scripts (see the examples folder in the repo) can be found [here](https://www.roblox.com/games/113331189278524/bugsocket-instance-replication)
 
 
 
