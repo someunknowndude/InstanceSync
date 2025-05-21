@@ -85,7 +85,7 @@ Universal client-to-client instance replication library using [BugSocket](https:
 #### Increase the wait time before `.new()`, `.fromExisting()` and `.clone()` return their created Instances to help against lag
 
 ```lua
-  _G.syncBaseWaitTime = 0.1 -- defaults to 0.05
+  _G.syncBaseWaitTime = 0.5 -- defaults to 0.2
 ```
 *The formula for the total wait time is*
 ```lua 
