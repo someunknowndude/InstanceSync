@@ -23,7 +23,7 @@ local posUpdateConnection: RBXScriptConnection
 
 _G.syncedInstances = _G.syncedInstances or {}
 _G.syncedBaseParts = _G.syncedBaseParts or {}
-_G.syncBaseWaitTime = _G.syncBaseWaitTime or 0.1
+_G.syncBaseWaitTime = _G.syncBaseWaitTime or 0.2
 
 local ignoredProperties = {"Position", "AssemblyCenterOfMass", "Orientation", "Rotation", "AssemblyMass", "Mass", "CurrentPhysicalProperties"} -- manual CFrame setting will still work :3
 local externalUpdateIgnoredProperties = {"CFrame", "Velocity", "AssemblyLinearVelocity"} -- system removed because very janky and destroys FPS with lots of updates
@@ -75,7 +75,7 @@ local function updateExternalInstanceProperty(instance: Instance, propertyName: 
 	local updatedExternally = instance:GetAttribute("SyncExternalUpdate")
 	instance:SetAttribute("SyncExternalUpdate", false)
 	if updatedExternally then return end
-	print("self update external: ", instance.Name, propertyName)
+	--print("self update external: ", instance.Name, propertyName)
 	updateProperty(instance, propertyName)
 end
 
@@ -350,7 +350,7 @@ InstanceSync.clone = function(originalInstance: Instance)
 end
 
 InstanceSync.set = function(instance: any, propertyName: string, value: any)
-	print("manual set " .. instance.Name .. "." .. propertyName .. " = " .. tostring(value))
+	--print("manual set " .. instance.Name .. "." .. propertyName .. " = " .. tostring(value))
 	pcall(function()
 		instance[propertyName] = value
 		updateProperty(instance, propertyName)
